@@ -1,5 +1,17 @@
 {
     "server": {
         "port": 8080
+    },
+
+    "logger": {
+        "path": "logs/server.log",
+        "http": {
+            "path": "logs/server_http.log",
+            "label": "HTTP"
+        },
+        "ws": {
+            "path": "logs/server_ws.log",
+            "label": "WS"
+        }
     }
 }
