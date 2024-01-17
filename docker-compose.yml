@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+
+  # --------------------------- HTTP and WS server --------------------------- #
+
+  server:
+    build:
+      context: .
+    container_name: server
+    env_file:
+      - .env
+    expose:
+      - "80"
+    ports:
+      - "80:80"
+    networks:
+      - docker_net
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - "./logs:/app/logs"
+
+networks:
+  docker_net:

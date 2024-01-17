@@ -33,4 +33,7 @@ app.get('/ping', (_req, res) => {
 
 /* ---------------------------- Starting servers ---------------------------- */
 
-app.listen(config.server.port, () => httpLogger.info('Server listening on port', config.server.port));
+if (process.env.HTTP_PORT && parseInt(process.env.HTTP_PORT))
+    app.listen(process.env.HTTP_PORT, () => httpLogger.info(`Server listening on port ${process.env.HTTP_PORT}`));
+else
+    app.listen(config.server.port, () => httpLogger.info(`Server listening on port ${config.server.port}`));

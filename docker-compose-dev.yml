@@ -1,0 +1,26 @@
+version: "3.0"
+
+services:
+
+  # --------------------------- HTTP and WS server --------------------------- #
+
+  server:
+    build:
+      context: .
+    container_name: server
+    env_file:
+      - .env
+    expose:
+      - "80"
+    ports:
+      - "8080:80"
+    networks:
+      - docker_net
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - ".:/app:z"
+    command: nodemon
+
+networks:
+  docker_net:
