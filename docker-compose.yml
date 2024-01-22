@@ -14,6 +14,7 @@ services:
       - "80"
     ports:
       - "80:80"
+      - "8080:8080"
     networks:
       - docker_net
     pid: host

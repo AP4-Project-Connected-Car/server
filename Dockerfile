@@ -2,6 +2,7 @@ FROM node:lts-alpine3.19
 
 # Override default config
 ENV HTTP_PORT=80
+ENV WS_PORT=8080
 
 # Set timezone
 ENV TZ=Europe/Paris

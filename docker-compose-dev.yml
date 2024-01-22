@@ -10,10 +10,9 @@ services:
     container_name: server
     env_file:
       - .env
-    expose:
-      - "80"
     ports:
       - "8080:80"
+      - "8081:8080"
     networks:
       - docker_net
     pid: host
