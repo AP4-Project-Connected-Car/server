@@ -41,7 +41,7 @@ $ npm start
 
 ### Production
 
-* Copier `.env.dev` ou `.env.prod` et le renommer `.env` en le complétant si nécessaire. Il s'agit d'un fichier regroupant les variables d'environnement.
+* Copier `.env.prod` et le renommer `.env` en le complétant si nécessaire. Il s'agit d'un fichier regroupant les variables d'environnement.
 
 ```bash
 $ docker compose build # Pour construire les images la première fois
@@ -58,7 +58,7 @@ $ docker compose down # Pour stopper les conteneurs
 
 ### Développement
 
-* Copier `.env.dev` ou `.env.prod` et le renommer `.env` en le complétant si nécessaire. Il s'agit d'un fichier regroupant les variables d'environnement.
+* Copier `.env.dev` et le renommer `.env` en le complétant si nécessaire. Il s'agit d'un fichier regroupant les variables d'environnement.
 
 ```bash
 $ docker compose -f docker-compose-dev.yml build # Pour construire les images la première fois

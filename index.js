@@ -44,5 +44,4 @@ app.listen(httpPort, () => httpLogger.info(`HTTP server listening on port ${http
 
 // WS server
 const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.env.WS_PORT : config.server.wsPort;
-const wssCallback = () => wsLogger.info(`WS server listening on port ${wssPort}`);
-const wss = new WebsocketServer(wssPort, wssCallback);
+const wss = new WebsocketServer(wssPort, () => wsLogger.info(`WS server listening on port ${wssPort}`));
