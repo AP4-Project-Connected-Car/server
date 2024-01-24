@@ -13,6 +13,14 @@
         "ws": {
             "path": "logs/server_ws.log",
             "label": "WS"
+        },
+        "db": {
+            "path": "logs/database.log",
+            "label": "DB"
         }
+    },
+
+    "db": {
+        "name": "project"
     }
 }

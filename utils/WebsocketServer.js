@@ -101,6 +101,4 @@ class WebsocketServer {
     }
 }
 
-// const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.env.WS_PORT : config.server.wsPort
-
-module.exports = { WebsocketServer }
+module.exports = { WebsocketServer };

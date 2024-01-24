@@ -20,6 +20,8 @@ services:
     volumes:
       - ".:/app:z"
     command: nodemon
+    depends_on:
+      - mongo
 
   # -------------------------------- Mongo DB -------------------------------- #
 

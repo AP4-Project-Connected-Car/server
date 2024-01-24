@@ -62,6 +62,7 @@ $ docker compose down # Pour stopper les conteneurs
 
 ```bash
 $ docker compose -f docker-compose-dev.yml build # Pour construire les images la première fois
+$ npm install # Pour installer les dépendances localement
 ```
 
 ```bash

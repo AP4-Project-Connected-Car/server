@@ -9,6 +9,7 @@ const { combine, timestamp, label, printf } = winston.format;
 
 // Load config file
 const config = require('../config.json');
+require('dotenv').config();
 
 /* ------------------------------- Logger init ------------------------------ */
 
@@ -40,6 +41,16 @@ const wsLogger = winston.createLogger({
     transports: [...transports, new winston.transports.File({ filename: wsFilename, name:"ws" })],
 });
 
+/* ----------------------------- Database logger ---------------------------- */
+
+const dbFilename = process.cwd() +  '/' + config.logger.db.path;
+
+const dbLogger = winston.createLogger({
+    level: process.env.LOGGER_LEVEL,
+    format: combine(label({ label: config.logger.db.label }), timestamp(), format),
+    transports: [...transports, new winston.transports.File({ filename: dbFilename, name:"db" })],
+});
+
 /* --------------------------------- Exports -------------------------------- */
 
-module.exports = { httpLogger, wsLogger };
+module.exports = { httpLogger, wsLogger, dbLogger };
