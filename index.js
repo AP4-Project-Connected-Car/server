@@ -16,6 +16,10 @@ const { httpLogger, wsLogger } = require('./utils/logger');
 const config = require('./config.json');
 require('dotenv').config();
 
+// Define ports
+const httpPort = process.env.HTTP_PORT && parseInt(process.env.HTTP_PORT) ? process.env.HTTP_PORT : config.server.httpPort;
+const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.env.WS_PORT : config.server.wsPort;
+
 /* -------------------------------------------------------------------------- */
 /*                                 HTTP server                                */
 /* -------------------------------------------------------------------------- */
@@ -39,6 +43,10 @@ app.get('/ping', (_req, res) => {
     res.json({message: 'Pong !', httpCode: 200});
 });
 
+app.get('/port', (_req, res) => {
+    res.json({ http: httpPort, ws: wssPort, httpCode: 200 });
+});
+
 app.get('/test', async (_req, res) => {
     db.connect();
 
@@ -54,9 +62,7 @@ app.get('/test', async (_req, res) => {
 /* -------------------------------------------------------------------------- */
 
 // HTTP server
-const httpPort = process.env.HTTP_PORT && parseInt(process.env.HTTP_PORT) ? process.env.HTTP_PORT : config.server.httpPort;
 app.listen(httpPort, () => httpLogger.info(`HTTP server listening on port ${httpPort}`));
 
 // WS server
-const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.env.WS_PORT : config.server.wsPort;
 const wss = new WebsocketServer(wssPort, () => wsLogger.info(`WS server listening on port ${wssPort}`));

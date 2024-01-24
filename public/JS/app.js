@@ -1,5 +1,11 @@
-async function connectToServer() {
-    const ws = new WebSocket('ws://localhost:8081');
+async function getWsPort() {
+    const response = await fetch(window.location.origin + '/port');
+    const result = await response.json();
+    return result.ws;
+}
+
+async function connectToServer(uri) {
+    const ws = new WebSocket(uri);
 
     ws.onmessage = (wsData) => {
         console.log(wsData);
@@ -18,7 +24,8 @@ async function connectToServer() {
 }
 
 async function test() {
-    const ws = await connectToServer();
+    const wsPort = await getWsPort();
+    const ws = await connectToServer(`ws://${window.location.hostname}:${wsPort}`);
     console.log('Connected to WS server !');
     ws.send(JSON.stringify({message: 'test'}));
 }

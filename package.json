@@ -8,7 +8,7 @@
     "start": "node index.js",
     "dev_start": "docker compose -f docker-compose-dev.yml up -d && docker logs -f server",
     "dev_stop": "docker compose -f docker-compose-dev.yml down",
-    "prod_start": "docker compose up -d",
+    "prod_start": "docker compose build && docker compose up -d && docker logs -f server",
     "prod_stop": "docker compose down"
   },
   "author": "MartDel",
