@@ -7,6 +7,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 
 const { WebsocketServer } = require('./utils/WebsocketServer');
 const { DatabaseManager } = require('./utils/DatabaseManager');
@@ -29,6 +30,7 @@ const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.e
 const app = express();
 app.use(bodyParser.json());
 app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 // Init the database manager
 const db = new DatabaseManager(process.env.MONGO_ROOT_USER, process.env.MONGO_ROOT_PASSWORD, config.db.name);
