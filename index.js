@@ -76,7 +76,11 @@ app.post('/logbook', async (req, res) => {
 });
 
 app.get('/monitoring', async () => {
-    res.json({ battery: { value: (10, 5 + Math.random() * 4), unit: "Volt" }, odometer: { value: 130000 + Math.random() * 4000, unit: "km" }, speed: { value: Math.random() * 70, unit: "km/h" } });
+    res.json({
+        battery: { value: (10, 5 + Math.random() * 4), unit: "Volt" },
+        odometer: { value: 130000 + Math.random() * 4000, unit: "km" },
+        speed: { value: Math.random() * 70, unit: "km/h" }
+    });
 });
 
 /* -------------------------------------------------------------------------- */
