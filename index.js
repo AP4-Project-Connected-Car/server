@@ -12,6 +12,8 @@ const { WebsocketServer } = require('./utils/WebsocketServer');
 const { DatabaseManager } = require('./utils/DatabaseManager');
 const { httpLogger, wsLogger } = require('./utils/logger');
 
+const signals = require('./public/JSON/signals.json');
+
 // Load config file
 const config = require('./config.json');
 require('dotenv').config();
@@ -45,6 +47,10 @@ app.get('/ping', (_req, res) => {
 
 app.get('/port', (_req, res) => {
     res.json({ http: httpPort, ws: wssPort, httpCode: 200 });
+});
+
+app.get('/signals', (_req, res) => {
+    res.json(signals);
 });
 
 app.get('/test', async (_req, res) => {

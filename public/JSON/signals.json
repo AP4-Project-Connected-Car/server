@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "Check engine",
+        "imgName": "img/signals/warning-lights-engine.webp",
+        "description": "<b>The check engine warning light</b> is one of the most common warning lights you’ll see on your dashboard. In some cars, the <b>check engine warning light</b> may be red instead of yellow or orange or replaced by the words “CHECK ENGINE”.<br/><br/><b>The check engine warning light</b> is the most feared warning light for drivers and may come on in two ways:<br/><br/>– If the light is steady, you must immediately make an appointment with a trusted mechanic. They can use an appropriate self-diagnosis tester to identify the problem that caused the light to come on.<br/>– If the light comes on intermittently, there could be a problem with the catalytic converter.<br/><br/>This type of warning requires more attention. The warning light can indicate various malfunctions related to the injection system, exhaust system, fuel supply, or accelerator pedal sensor. Although it is possible to drive with the engine warning light on, avoiding driving for a prolonged period or subjecting the car to excessive strain is advisable. If you must drive, it is better to choose a route that is free of inclines or hills. Ultimately, addressing the problem as soon as possible is best to avoid further damage and more expensive repairs."
+    },
+    {
+        "id": 1,
+        "name": "Engine temperature",
+        "imgName": "img/signals/warning-lights-engine-temperature.webp",
+        "description": "<b>The engine temperature warning light</b> indicates the car’s engine is overheating, which may lead to significant engine damage. It means your cooling system is malfunctioning, and the engine cannot cool properly.<br/><b>Stop the vehicle as soon as possible in a safe place! Pay attention to this warning light because the engine could be seriously damaged if you ignore it.</b><br/>Check the coolant levels, and if low, top up.<br/><b>Be careful! The cooling system is pressurised. Allow the engine to cool down completely before adding more coolant.</b><br/>Usually, when it lights up steadily, it indicates either a lack of coolant in the system or, in cars with a variable-flow electric water pump, a pump malfunction.<br/><b>!! Warning !! Don’t start the car if the warning light remains lit after topping up the coolant. The car must be towed to a workshop.</b>"
+    },
+    {
+        "id": 2,
+        "name": "Engine oil pressure",
+        "imgName": "img/signals/warning_lights_engine_oil_pressure.webp",
+        "description": "<b>The engine oil pressure warning light</b> indicates the engine’s oil pressure is low. When the engine is running, oil is pumped throughout the engine to lubricate its moving parts. If the oil pressure drops below a certain level, it can cause damage to the engine. This could be due to low oil levels, a faulty oil pump, a faulty oil pressure sensor, or an oil filter clogged by debris that could restrict oil flow.<br/><b>Stop the engine immediately, and do not restart it!</b><br/>It is essential, in this case, to check the oil level immediately and top up if necessary.<br/><b>!! Warning !! If the oil level is correct, but the light is still there, take the vehicle to our workshop with the tow truck for a proper diagnosis and repair! Do not start the vehicle; you could irreparably damage the engine!</b>"
+    }
+]
