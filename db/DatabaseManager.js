@@ -6,7 +6,7 @@
 
 const { MongoClient } = require('mongodb');
 
-const { dbLogger } = require('./logger');
+const { dbLogger } = require('../utils/logger');
 
 /* -------------------------------------------------------------------------- */
 /*                              Database manager                              */

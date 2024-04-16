@@ -10,7 +10,8 @@ const path = require('path');
 const cors = require('cors');
 
 const { WebsocketServer } = require('./utils/WebsocketServer');
-const { DatabaseManager } = require('./utils/DatabaseManager');
+const { DatabaseManager } = require('./db/DatabaseManager');
+const { Log } = require('./db/Log');
 const { httpLogger, wsLogger } = require('./utils/logger');
 
 const signals = require('./public/JSON/signals.json');
@@ -60,9 +61,18 @@ app.get('/test', async (_req, res) => {
 
     const result = await db.test();
 
-    await db.close();
-
     res.json(result);
+});
+
+app.get('/logbook', async (_req, res) => {
+    const result = await Log.getAllLogs(db);
+    res.json(result);
+});
+
+app.post('/logbook', async (req, res) => {
+    const log = Log.fromObject(req.body);
+    await log.insert(db);
+    res.send({message: 'ok', httpCode: 200});
 });
 
 /* -------------------------------------------------------------------------- */
