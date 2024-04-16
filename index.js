@@ -45,7 +45,7 @@ app.get('/', (_req, res) => {
 
 app.get('/ping', (_req, res) => {
     httpLogger.info('Ping received');
-    res.json({message: 'Pong !', httpCode: 200});
+    res.json({ message: 'Pong !', httpCode: 200 });
 });
 
 app.get('/port', (_req, res) => {
@@ -72,7 +72,11 @@ app.get('/logbook', async (_req, res) => {
 app.post('/logbook', async (req, res) => {
     const log = Log.fromObject(req.body);
     await log.insert(db);
-    res.send({message: 'ok', httpCode: 200});
+    res.send({ message: 'ok', httpCode: 200 });
+});
+
+app.get('/monitoring', async () => {
+    res.json({ battery: { value: (10, 5 + Math.random() * 4), unit: "Volt" }, odometer: { value: 130000 + Math.random() * 4000, unit: "km" }, speed: { value: Math.random() * 70, unit: "km/h" } });
 });
 
 /* -------------------------------------------------------------------------- */
