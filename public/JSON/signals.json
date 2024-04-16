@@ -16,5 +16,71 @@
         "name": "Engine oil pressure",
         "imgName": "img/signals/warning_lights_engine_oil_pressure.webp",
         "description": "<b>The engine oil pressure warning light</b> indicates the engine’s oil pressure is low. When the engine is running, oil is pumped throughout the engine to lubricate its moving parts. If the oil pressure drops below a certain level, it can cause damage to the engine. This could be due to low oil levels, a faulty oil pump, a faulty oil pressure sensor, or an oil filter clogged by debris that could restrict oil flow.<br/><b>Stop the engine immediately, and do not restart it!</b><br/>It is essential, in this case, to check the oil level immediately and top up if necessary.<br/><b>!! Warning !! If the oil level is correct, but the light is still there, take the vehicle to our workshop with the tow truck for a proper diagnosis and repair! Do not start the vehicle; you could irreparably damage the engine!</b>"
+    },
+    {
+        "id": 3,
+        "name": "Battery charge",
+        "imgName": "img/signals/warning-lights-battery-charge.webp",
+        "description": ""
+    },
+    {
+        "id": 4,
+        "name": "Power steering",
+        "imgName": "img/signals/warning-lights-steering.webp",
+        "description": ""
+    },
+    {
+        "id": 5,
+        "name": "Airbag",
+        "imgName": "img/signals/warning-lights-airbag.webp",
+        "description": ""
+    },
+    {
+        "id": 6,
+        "name": "Brake",
+        "imgName": "img/signals/warning-lights-brake.webp",
+        "description": ""
+    },
+    {
+        "id": 7,
+        "name": "Coolant level",
+        "imgName": "img/signals/warning-lights-coolant.webp",
+        "description": ""
+    },
+    {
+        "id": 8,
+        "name": "DPF",
+        "imgName": "img/signals/warning-lights-exhaust-filter.webp",
+        "description": ""
+    },
+    {
+        "id": 9,
+        "name": "ABS",
+        "imgName": "img/signals/warning-lights-abs.webp",
+        "description": ""
+    },
+    {
+        "id": 10,
+        "name": "Tyre pressure",
+        "imgName": "img/signals/warning-lights-tyre-pressure.webp",
+        "description": ""
+    },
+    {
+        "id": 11,
+        "name": "Traction control",
+        "imgName": "img/signals/warning-lights-stability.webp",
+        "description": ""
+    },
+    {
+        "id": 12,
+        "name": "Brake pad wear",
+        "imgName": "img/signals/warning-lights-brake-pad.webp",
+        "description": ""
+    },
+    {
+        "id": 13,
+        "name": "Powertrain malfunction",
+        "imgName": "img/signals/warning_lights_powertrain_malfunction.webp",
+        "description": ""
     }
 ]
