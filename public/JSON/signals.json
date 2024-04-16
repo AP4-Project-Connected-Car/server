@@ -21,66 +21,66 @@
         "id": 3,
         "name": "Battery charge",
         "imgName": "img/signals/warning-lights-battery-charge.webp",
-        "description": ""
+        "description": "When the ignition is switched on, <b>the battery charge warning light</b> comes on as a self-check. A permanently lit battery charging light informs you of a potential issue with your car’s charging system.<br><br>This could be due to a malfunctioning alternator, a loose or corroded battery connection, or a dying battery. Electronic parts may be damaged, the engine may not restart, engine cooling may fail, and power steering may not function.<br><br><b>You must stop as soon as possible in a safe place. It’s important to check your battery and charging system immediately!</b>"
     },
     {
         "id": 4,
         "name": "Power steering",
         "imgName": "img/signals/warning-lights-steering.webp",
-        "description": ""
+        "description": "<b>The power steering warning light</b> comes on when a problem is detected in the car’s steering system. When the system fails, and the warning light comes on, the steering may become extremely heavy, making it much more difficult to turn the car. This is a dangerous problem at high speeds when you need to change direction quickly, and the car does not respond quickly. <b>You should not drive a car with power steering problems. Contact a repair centre as soon as possible.</b>"
     },
     {
         "id": 5,
         "name": "Airbag",
         "imgName": "img/signals/warning-lights-airbag.webp",
-        "description": ""
+        "description": "When <b>the airbag warning light</b> on your dashboard turns red, it’s not good news. It means that something’s not OK with your airbag safety system. Three things could cause the problem: the airbag system itself, the front passenger classification system (which ensures the airbag deploys safely), or the seat belt tightener (which ensures your seat belt is snug in case of a crash). Since the airbag system is a passenger safety system in the event of an accident, <b>it is important to have the car checked as soon as possible.</b>"
     },
     {
         "id": 6,
         "name": "Brake",
         "imgName": "img/signals/warning-lights-brake.webp",
-        "description": ""
+        "description": "<b>The brake warning light</b> comes on when the handbrake is applied. If it stays on all after you fully release the parking brake or comes on when you’re driving, it means that:<br>- the parking brake lever/pedal must be adjusted;<br>– the brake pads are worn and must be replaced;<br>– or the hydraulic system is defective and is probably losing pressure/fluid.<br><br>If the warning light stays on, <b>contact a repair centre immediately</b> to diagnose and repair the brake system. If you notice your ABS (anti-lock braking system) warning light is lit up, too, it could signal a malfunction in the braking system, resulting in no brakes working.<br><b>Don’t drive the car in these conditions!</b>"
     },
     {
         "id": 7,
         "name": "Coolant level",
         "imgName": "img/signals/warning-lights-coolant.webp",
-        "description": ""
+        "description": "<b>The coolant level warning light</b> comes on when the coolant level gets too low, and the light reminds you to top it up. <b>Do not ignore this warning light!</b> Coolant is an important element for proper engine operation. <b>An engine that is not properly cooled will overheat and become damaged.</b>"
     },
     {
         "id": 8,
         "name": "DPF",
         "imgName": "img/signals/warning-lights-exhaust-filter.webp",
-        "description": ""
+        "description": "<b>The DPF warning light</b> is a warning light found on Diesel cars. <b>Remember that Diesel-engined cars are made to travel long distances at high speeds and not to be used in the city, where stop-and-go traffic does not allow the DPF to regenerate.</b> The DPF warning light usually comes on when the Diesel car fails to complete <b>the passive regeneration(at temp>=350°C)</b> during regular use a certain number of times, and the DPF becomes clogged, reducing the amount of air passing through. When the DPF level soot is around 40-45%, the ECU performs <b>an active regeneration that needs temperatures around 550-600°C</b> to burn the soot and clean the DPF. If both passive and active regeneration fails to clean the DPF, the car enters <b>‘limp-home mode’</b> and going to a workshop to do a <b>forced dpf regeneration</b> will be necessary. If forced regeneration also fails, the DPF needs to be removed and flushed or replaced.  It is important to address DPF issues promptly, as a blocked DPF can lead to reduced engine performance, increased fuel consumption, and, ultimately, costly repairs. Other causes of the presence of the DPF warning light on the dash can be a malfunctioning sensor or a problem with the DEF system.<br><br>Below is a video about a faulty DPF sensor, the warning lights that came on because of it, and how the problem was diagnosed and solved."
     },
     {
         "id": 9,
         "name": "ABS",
         "imgName": "img/signals/warning-lights-abs.webp",
-        "description": ""
+        "description": "<b>The ABS warning light</b> indicates that there’s a problem with your car’s anti-lock braking system. This system helps prevent your wheels from locking up during hard braking, and a malfunction can reduce your ability to stop quickly. <b>If you see this warning light come on, a mechanic must check your vehicle as soon as possible.</b>"
     },
     {
         "id": 10,
         "name": "Tyre pressure",
         "imgName": "img/signals/warning-lights-tyre-pressure.webp",
-        "description": ""
+        "description": "<b>The tyre pressure warning light</b> comes on when the <b>tyre pressure is too low</b>. Tyre pressure drops over time or because the tyre has punctured. Low tyre pressure can cause driving problems, so reduce speed and try to avoid sudden braking or violent steering manoeuvres. <b>Inflate your tyres at the nearest gas station or go straight to the tyre shop for a check-up.</b>"
     },
     {
         "id": 11,
         "name": "Traction control",
         "imgName": "img/signals/warning-lights-stability.webp",
-        "description": ""
+        "description": "If your car’s wheels lose traction while driving, the traction control system assists you in maintaining control of the vehicle. <b>The traction control warning light</b> is typically illuminated when the system is in use, indicating that your car has briefly lost traction while navigating a sharp turn or driving on wet roads. However, the traction control light may also indicate that the system has been disabled or has an issue, so <b>it is important to be cautious while driving when the light is on</b>. This is especially true in adverse weather conditions such as ice or snow. Additionally, your driving style can also impact how often you rely on the traction control system. If you drive recklessly, you may need to use it more frequently."
     },
     {
         "id": 12,
         "name": "Brake pad wear",
         "imgName": "img/signals/warning-lights-brake-pad.webp",
-        "description": ""
+        "description": "<b>The brake pad wear warning light</b> can be on new vehicles and comes on when the brake pad sensor detects excessive wear, with serious consequences for the brake system’s performance and the car’s safety. <b>It warns you that it is time to replace your brake pads before it is too late!</b>"
     },
     {
         "id": 13,
         "name": "Powertrain malfunction",
         "imgName": "img/signals/warning_lights_powertrain_malfunction.webp",
-        "description": ""
+        "description": "<b>The drivetrain or powertrain warning light</b> is an important indicator on a vehicle dashboard that alerts the driver to a potential problem with the vehicle’s powertrain. The powertrain consists of the engine, transmission, and various components that work together to transfer power to the wheels. When this warning light illuminates, it could indicate various issues, such as a malfunctioning transmission or a faulty sensor. It is important to deal promptly with any issues indicated by the drivetrain or powertrain warning light to avoid more severe issues. <b>A certified mechanic can diagnose and fix the problem, ensuring the vehicle remains in optimal condition.</b>"
     }
 ]
