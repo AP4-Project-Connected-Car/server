@@ -38,9 +38,11 @@ app.get('*', (_req, res) => res.status(404).send({ message: 'Nothing on this end
 
 /* ------------------------------ Connect to DB ----------------------------- */
 
-const MONGO_URL = `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@mongo:27017/project`;
-mongoose.set("strictQuery", false);
-mongoose.connect(MONGO_URL, () => dbLogger.info('Connected to DB!'));
+const MONGO_URL = `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@mongo:27017/project?authSource=admin`;
+console.log(MONGO_URL);
+mongoose.connect(MONGO_URL)
+    .then(() => dbLogger.info('Connected to DB!'))
+    .catch((err) => { console.error(err); });
 
 /* ---------------------------- Starting servers ---------------------------- */
 
