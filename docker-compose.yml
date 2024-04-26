@@ -7,6 +7,7 @@ services:
   server:
     build:
       context: .
+      dockerfile: ./build/Dockerfile.prod
     container_name: server
     env_file:
       - .env
@@ -18,7 +19,7 @@ services:
     pid: host
     restart: unless-stopped
     volumes:
-      - "./logs:/app/logs"
+      - "./src/logs:/app/logs"
     depends_on:
       - mongo
 

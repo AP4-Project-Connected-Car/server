@@ -1,5 +1,6 @@
 node_modules
 .env
 logs/*.log
+src/logs/*.log
 npm-debug.log
 .vscode
