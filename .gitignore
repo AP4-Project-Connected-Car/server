@@ -4,3 +4,4 @@ logs/*.log
 src/logs/*.log
 npm-debug.log
 .vscode
+./front

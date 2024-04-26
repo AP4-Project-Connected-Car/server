@@ -7,7 +7,7 @@ services:
   server:
     build:
       context: .
-      dockerfile: ./build/Dockerfile.prod
+      dockerfile: ./build/server/Dockerfile.prod
     container_name: server
     env_file:
       - .env
@@ -22,6 +22,24 @@ services:
       - "./src/logs:/app/logs"
     depends_on:
       - mongo
+
+  # ---------------------------------- Front --------------------------------- #
+
+  front:
+    build:
+      context: .
+      dockerfile: ./build/front/Dockerfile.prod
+    container_name: front
+    env_file:
+      - .env
+    ports:
+      - "${VITE_PROD_PORT}:${VITE_PROD_PORT}"
+    networks:
+      - docker_net
+    pid: host
+    restart: unless-stopped
+    depends_on:
+      - server
 
   # -------------------------------- Mongo DB -------------------------------- #
 
