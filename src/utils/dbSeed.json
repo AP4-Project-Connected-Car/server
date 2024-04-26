@@ -87,20 +87,20 @@
 
     "models/monitoring/Battery": [
         {
-            "value": 13
+            "value": 13.11
         }
     ],
 
     "models/monitoring/Odometer": [
         {
-            "distanceSinceLastHour": 40,
-            "value": 150000
+            "distanceSinceLastHour": 40.11,
+            "value": 150000.11
         }
     ],
 
     "models/monitoring/CoolingLiquidTemp": [
         {
-            "value": 20
+            "value": 120.1
         }
     ]
 }

@@ -26,8 +26,8 @@ router.get('/', async (_req, res) => {
         const result = {
             battery: { name: "Battery", value: lastBatteryValue.value, unit: "V" },
             odometer: { name: "Odometer", value: lastOdometerValue.value, unit: "km" },
-            speed: { name: "speed", value: 0, unit: "km/h" },
-            coolingLiquid: { name: "Cooling liquid", value: lastCoolingLiquidTempValue.value, unit: "°C" }
+            speed: { name: "Speed", value: 0, unit: "km/h" },
+            coolingLiquid: { name: "Cooling Liquid", value: lastCoolingLiquidTempValue.value, unit: "°C" }
         };
         res.json(result);
     } catch (err) {
