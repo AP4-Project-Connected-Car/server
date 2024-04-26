@@ -1,0 +1,17 @@
+FROM node:lts-alpine3.19
+
+# Set timezone
+ENV TZ=Europe/Paris
+RUN apk add --no-cache tzdata
+
+WORKDIR /app
+
+COPY front/package*.json .
+
+RUN npm install
+
+WORKDIR /
+COPY front app
+WORKDIR /app
+
+CMD [ "npm", "start" ]

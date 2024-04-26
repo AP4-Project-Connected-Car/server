@@ -24,6 +24,26 @@ services:
     depends_on:
       - mongo
 
+  # ---------------------------------- Front --------------------------------- #
+
+  front:
+    build:
+      context: .
+      dockerfile: ./build/front/Dockerfile.dev
+    container_name: front
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - docker_net
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - "./front:/app:z"
+    depends_on:
+      - server
+
   # -------------------------------- Mongo DB -------------------------------- #
 
   mongo:
