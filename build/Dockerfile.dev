@@ -14,11 +14,11 @@ RUN npm install -g nodemon
 WORKDIR /app
 
 # Install dependencies
-COPY package*.json ./
+COPY src/package*.json ./
 RUN npm install
 
 COPY . .
 
-HEALTHCHECK --interval=5s --timeout=10s --retries=5 --start-period=5s CMD ["curl", "-f", "http://localhost/ping"]
+HEALTHCHECK --interval=5s --timeout=10s --retries=5 --start-period=5s CMD ["curl", "-f", "http://localhost/api/ping"]
 
 CMD ["npm", "start"]

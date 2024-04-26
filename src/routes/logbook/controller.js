@@ -19,7 +19,7 @@ const router = Router();
 // Get current logs from database
 router.get('/', async (_req, res) => {
     try {
-        dbLogger.info('GET /logbook');
+        httpLogger.info('GET /logbook');
         const data = await Log.find({});
         res.json(data);
     } catch (err) {
@@ -35,7 +35,7 @@ router.post('/',
     body('content').isString(), // Validator
     body('type').isNumeric(), // Validator
     async (req, res) => {
-        dbLogger.info('POST /logbook');
+        httpLogger.info('POST /logbook');
 
         // Verify body data
         const errors = validationResult(req);
@@ -53,6 +53,7 @@ router.post('/',
 
         try {
             const savedLog = await log.save();
+            dbLogger.info(`New logbook saved with id ${savedLog._id}`);
             res.json(savedLog);
         } catch (err) {
             httpLogger.warn("POST /logbook Response error");

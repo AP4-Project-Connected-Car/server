@@ -7,6 +7,7 @@ services:
   server:
     build:
       context: .
+      dockerfile: build/Dockerfile.dev
     container_name: server
     env_file:
       - .env
@@ -18,7 +19,7 @@ services:
     pid: host
     restart: unless-stopped
     volumes:
-      - ".:/app:z"
+      - "./src:/app:z"
     command: nodemon
     depends_on:
       - mongo

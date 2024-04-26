@@ -36,31 +36,5 @@ router.get('/ports', (_req, res) => {
     res.json({ http: httpPort, ws: wssPort, httpCode: 200 });
 });
 
-// Test route
-router.get('/test', async (_req, res) => {
-    try {
-        httpLogger.info('GET /api/test');
-        const result = [];
-    
-        let tmp = await new Battery({value: 13}).save();
-        result.push(tmp);
-        dbLogger.info('New Battery item inserted');
-    
-        tmp = await new Odometer({value: 150000, distanceSinceLastHour: 40}).save();
-        result.push(tmp);
-        dbLogger.info('New Odometer item inserted');
-    
-        tmp = await new CoolingLiquidTemp({value: 20}).save();
-        result.push(tmp);
-        dbLogger.info('New CoolingLiquidTemp item inserted');
-    
-        res.json({ data: result, httpCode: 200 });
-    } catch (err) {
-        httpLogger.warn("POST /api/test Response error");
-        res.status(500).json({ message: err, httpCode: 500 });
-        console.error(err);
-    }
-});
-
 // Export the router
 module.exports = router;
