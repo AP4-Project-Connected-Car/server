@@ -1,8 +1,8 @@
-FROM python:3.12
+FROM python:3.12.3-alpine
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && apt-get install -y --no-install-recommends tzdata && apt-get clean
+# Set timezone
+ENV TZ=Europe/Paris
+RUN apk add --no-cache tzdata
 
 WORKDIR /app
 COPY I2C-receiver/requirements.txt .
