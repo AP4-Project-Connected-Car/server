@@ -49,7 +49,7 @@ services:
   i2c:
     build:
       context: .
-      dockerfile: ./build/i2c/Dockerfile.dev
+      dockerfile: ./build/i2c/Dockerfile
     container_name: i2c
     env_file:
       - .env
