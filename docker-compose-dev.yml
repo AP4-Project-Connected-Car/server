@@ -44,6 +44,26 @@ services:
     depends_on:
       - server
 
+  # ------------------------------- I2C reader ------------------------------- #
+
+  i2c:
+    build:
+      context: .
+      dockerfile: ./build/i2c/Dockerfile.dev
+    container_name: i2c
+    env_file:
+      - .env
+    networks:
+      - docker_net
+    # devices:
+    #   - /dev/i2c-1
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - "./I2C-receiver:/app:z"
+    depends_on:
+      - server
+
   # -------------------------------- Mongo DB -------------------------------- #
 
   mongo:

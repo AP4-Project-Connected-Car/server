@@ -20,6 +20,8 @@ async function seedMongoDB() {
             }
         }
     }
+
+    dbLogger.debug(`Database seeded !`);
 }
 
 module.exports = { seedMongoDB };

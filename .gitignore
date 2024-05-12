@@ -4,5 +4,8 @@ logs/*.log
 src/logs/*.log
 npm-debug.log
 .vscode
+
 front
 !build/front
+
+I2C-receiver

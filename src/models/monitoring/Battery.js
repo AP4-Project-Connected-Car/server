@@ -8,6 +8,9 @@ const Battery = mongoose.Schema({
     value: {
         type: Number,
         required: true,
+    },value: {
+        type: Number,
+        required: true,
     },
     createdAt: {
         type: Date,

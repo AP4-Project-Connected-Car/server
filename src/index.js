@@ -40,15 +40,18 @@ app.get('*', (_req, res) => res.status(404).send({ message: 'Nothing on this end
 /* ------------------------------ Connect to DB ----------------------------- */
 
 const MONGO_URL = `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@mongo:27017/project?authSource=admin`;
-mongoose.connect(MONGO_URL)
+mongoose
+    .connect(MONGO_URL)
     .then(() => {
         dbLogger.info('Connected to DB!');
 
         // Seeding the database
-        dbLogger.debug('Seeding the DB...')
+        dbLogger.debug('Seeding the DB...');
         seedMongoDB();
     })
-    .catch((err) => { console.error(err); });
+    .catch((err) => {
+        console.error(err);
+    });
 
 /* ---------------------------- Starting servers ---------------------------- */
 
@@ -60,6 +63,5 @@ const wssPort = process.env.WS_PORT && parseInt(process.env.WS_PORT) ? process.e
 app.listen(httpPort, () => httpLogger.info(`HTTP server listening on port ${httpPort}`));
 
 // WS server
-const { WebsocketServer } = require('./utils/WebsocketServer');
-const { exitOnError } = require('winston');
+const { WebsocketServer } = require('./ws/WebsocketServer');
 const wss = new WebsocketServer(wssPort, () => wsLogger.info(`WS server listening on port ${wssPort}`));

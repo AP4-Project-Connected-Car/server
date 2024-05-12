@@ -6,8 +6,19 @@
 
 const WebSocket = require('ws');
 const uuid = require('uuid');
+const path = require('path');
+const fs = require('fs');
 
-const { wsLogger } = require('./logger');
+// Import all components modules
+const componentsDir = path.join(__dirname, 'components');
+const componentsFiles = fs.readdirSync(componentsDir);
+const components = componentsFiles.reduce((obj, file) => {
+    obj[file.replace('.js', '')] = require('./' + path.join('components', file));
+    return obj;
+}, {});
+
+const { wsLogger } = require('../utils/logger');
+const { error } = require('console');
 
 /* -------------------------------------------------------------------------- */
 /*                                  WS server                                 */
@@ -27,11 +38,11 @@ class WebsocketServer {
         this.clients = new Map();
 
         // Init events
-        this.server.on('connection', ws => {
+        this.server.on('connection', (ws) => {
             this.onConnection(ws);
 
             // A message is received
-            ws.on('message', msg => this.onMessage(ws, msg));
+            ws.on('message', (msg) => this.onMessage(ws, msg));
 
             // The client leaves
             ws.on('close', () => this.onClose(ws));
@@ -46,13 +57,14 @@ class WebsocketServer {
      * @param {String} message The message to send
      */
     broadcast(message) {
-        [...this.clients.keys()].forEach(client => {
+        wsLogger.info(`Broadcasting : ${message}`);
+        [...this.clients.keys()].forEach((client) => {
             const clientData = this.clients.get(client);
-            const sent = {...clientData, message};
+            const sent = { ...clientData, message };
             client.send(JSON.stringify(sent));
-            wsLogger.info(`Sent to ${clientData.id} : ${sent.message}`);
+            wsLogger.debug(`Sent to ${clientData.id} : ${sent.message}`);
         });
-    } 
+    }
 
     /* -------------------------------------------------------------------------- */
     /*                                   Events                                   */
@@ -81,13 +93,14 @@ class WebsocketServer {
         // Parse message data
         try {
             const data = JSON.parse(messageAsString);
-            wsLogger.info(`Received from ${clientData.id} : ${data.message}`);
+            if (data.for === 'server') {
+                wsLogger.info(`Received message from ${clientData.id} : ${data.component}`);
+                components[data.component].dataReceived(this, data.content);
+            }
         } catch (err) {
-            wsLogger.warning(`Wrong message received from ${clientData.id}`);
+            console.error(err);
+            wsLogger.warn(`Wrong message received from ${clientData.id}`);
         }
-
-        // Broadcast a message
-        this.broadcast('Received !');
     }
 
     /**
