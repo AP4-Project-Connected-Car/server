@@ -66,10 +66,10 @@ function dataReceived(wss, content) {
     }
 
     // Send the full distance to the UI
-    wss.broadcast(JSON.stringify({for: 'ui', component: 'odometer', content: { value: trunc(lastEntry.value / 100) }}));
+    wss.broadcast(JSON.stringify({ for: 'ui', component: 'odometer', content: { value: trunc(lastEntry.value / 1000) } }));
 
     // Send the speed to the UI
-    wss.broadcast(JSON.stringify({for: 'ui', component: 'speed', content: { value: trunc(traveledDistance/1000*36, 0) }}));
+    wss.broadcast(JSON.stringify({ for: 'ui', component: 'speed', content: { value: trunc(traveledDistance/1000*36, 0) } }));
 }
 
 module.exports = { dataReceived };
